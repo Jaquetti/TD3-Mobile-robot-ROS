@@ -1,6 +1,6 @@
 # TD3-Mobile-robot-ROS
 
-Final paper project of Mechatronic Engineering degree 
+Final paper project Mechatronic Engineering degree 
 
 <b> ACKNOWLEDGMENT </b>
 
