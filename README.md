@@ -1,7 +1,6 @@
 # TD3-Mobile-robot-ROS
 
-Final paper project Mechatronic Engineering degree 
-
+Mechatronic Engineering degree final paper project 
 <b> ACKNOWLEDGMENT </b>
 
 TD3 model used: https://github.com/sfujim/TD3
