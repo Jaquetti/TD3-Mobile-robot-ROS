@@ -22,4 +22,4 @@ This project has the objective of train a <b>Twin delayed deep determinisctic po
 
 </br>
 
-![image](https://user-images.githubusercontent.com/46981727/201248975-002636b5-f884-4f0b-8bd5-1bd89bae2c87.png)
+![image](https://user-images.githubusercontent.com/46981727/201249071-f3c682b2-306c-4fef-8313-55e1cf8056b0.png)
