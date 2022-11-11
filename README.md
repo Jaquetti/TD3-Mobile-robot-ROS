@@ -23,3 +23,18 @@ This project has the objective of train a <b>Twin delayed deep determinisctic po
 </br>
 
 ![image](https://user-images.githubusercontent.com/46981727/201249071-f3c682b2-306c-4fef-8313-55e1cf8056b0.png)
+
+</br>
+</br>
+</br>
+
+<b>RESULTS</b>
+
+First enviroment: https://www.youtube.com/watch?v=tEYUrJHbvBE
+
+Second enviroment: https://www.youtube.com/watch?v=noHTKR8ND04
+
+Third enviroment: https://www.youtube.com/watch?v=Nku2y-awUfI
+
+Fourth enviroment: https://www.youtube.com/watch?v=tl-FV948qM0
+
