@@ -25,7 +25,6 @@ class Actor(nn.Module):
 		a = F.relu(self.l1(state))
 		a = F.relu(self.l2(a))
 		a_1 = torch.sigmoid(self.l3_1(a))
-		#a_1 = torch.softmax(self.l3_1(a))
 		a_2 = torch.tanh(self.l3_2(a))
 		return self.max_action.to(device) *torch.cat((a_1, a_2), dim=1)
 
