@@ -18,7 +18,7 @@ Training enviroments used: https://github.com/ROBOTIS-GIT/turtlebot3
 
 <b>PROJECT</b>
 
-This project has the objective of train a <b>Twin delayed deep determinisctic policy gradient (TD3)</b> algorithm to learn navigation techniques in the following enviroments:
+This project has the objective of train a <b>Twin delayed deep deterministic policy gradient(TD3)</b> algorithm to learn navigation techniques in the following enviroments:
 
 </br>
 
