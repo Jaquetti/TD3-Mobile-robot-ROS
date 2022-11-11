@@ -35,7 +35,8 @@ This project has the objective of train a <b>Twin delayed deep determinisctic po
 
 
 
-https://user-images.githubusercontent.com/46981727/201251045-07afc348-ea96-4923-bf70-c473780f002a.mp4
+
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/46981727/201252095-7a3e09b2-c21d-438b-8083-5b18449d25f5.gif)
 
 
 
