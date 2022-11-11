@@ -2,6 +2,7 @@
 
 Final paper project of Mechatronic Engineering degree 
 
-<b> acknowledgment
+<b> ACKNOWLEDGMENT <\b>
 
-The DDPG model was inpired in cyoon1729.github.io tutorial:
+TD3 model used: https://github.com/sfujim/TD3
+Training enviroments used: https://github.com/ROBOTIS-GIT/turtlebot3
