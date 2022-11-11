@@ -22,13 +22,10 @@ from gazebo_msgs.srv import SpawnModel, DeleteModel
 import time
 import matplotlib.pyplot as plt
 
-#ROBO
-
 
 class Robot_ros:
 	def __init__(self):
 		rospy.init_node('robot')
-		#self.sub = rospy.Subscriber('/odom',Odometry, self.get_pos)
 		self.pub_vel = rospy.Publisher('/cmd_vel', Twist, queue_size = 1)
 		self.pub_point = rospy.Publisher('/target_point', Point, queue_size = 1)
 		self.rate = rospy.Rate(10)
@@ -111,14 +108,6 @@ class Robot_ros:
 		self.load_weights()
 	
 
-	
-	# def send_point(self):
-	# 	target_point = Point()
-	# 	target_point.x = self.set_point_x
-	# 	target_point.y = self.set_point_y
-	# 	target_point.z = 0
-	# 	self.pub_point.publish(target_point)
-
 	def plot_target(self):
 		rospy.wait_for_service('/gazebo/pause_physics')
 		models = rospy.wait_for_message('gazebo/model_states', ModelStates)
@@ -157,33 +146,10 @@ class Robot_ros:
 		self.index = np.random.randint(0,len(self.points_x )-1)
 		self.set_point_x = self.points_x[self.index]
 		self.set_point_y = self.points_y[self.index]
+
 		if self.train==False:
 			self.plot_target()
 		
-	def show_lidar(self):
-		# fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
-		plt.figure(1)
-		plt.title("72 pontos do LiDAR")
-		plt.grid()
-		plt.axis('off')
-		# ax.set_rmax(max(self.distances))
-		# ax.grid(True)
-		# ax.set_title("Pontos do Lidar", va='top')
-		theta = 0
-		# rot = np.array([[np.cos(theta),-np.sin(theta)],[np.sin(theta),np.cos(theta)]])
-		for i in range(len(self.distances)):
-			plt.scatter(self.distances[i]*np.cos(theta),self.distances[i]*np.sin(theta), color="black")
-			theta+=5
-			
-
-
-		# ax.set_rticks([0.5, 1, 1.5, 2])  # Less radial ticks
-		# ax.set_rlabel_position(-22.5)  # Move radial labels away from plotted line
-		plt.savefig("/home/pedro/tcc_ws/src/tcc/scripts/fig.png")
-		plt.pause(0.001)
-		
-		plt.clf()
-
 	def get_odom(self, data):
 		return data
 		
@@ -200,9 +166,7 @@ class Robot_ros:
 		self.distances = np.array(self.distance,dtype=np.float32)
 		self.distances[self.distances == np.inf] = msgScan.range_max
 		
-		
 	
-		# self.show_lidar()
 		return self.distances
 
 	def check_norm_dist(self):
@@ -307,6 +271,7 @@ class Robot_ros:
 				self.change_point()
 				self.count_crash = 0
 			self.reset_simulation()
+
 		elif self.dist_error<=0.3:
 			self.count_crash = 0
 			self.step_robot = 0
@@ -340,12 +305,11 @@ class Robot_ros:
 		return new_state, reward, done
 
 	def run(self, train = False):
-		#self.back_gr()
+		
 		self.train = train
 		self.reset_simulation()
 		if self.train is not True:
 			self.evaluations.append(self.eval_policy())
-			# pass
 		else:
 			for _ in range(self.epochs):
 				self.state, _, _ = self.step([0,0])
@@ -411,17 +375,14 @@ class Robot_ros:
 
 			if self.done:
 				self.stop_robot()
-				#self.back_gr()
 				if self.end ==False:
 					self.reset_simulation()
 				else:
 					print('Chegou no ponto')
 
 		avg_reward /= self.eval_episodes
-
-		print("---------------------------------------")
-		print(f"Average rewards over {self.eval_episodes} episodes: {avg_reward:.3f}")
-		print("---------------------------------------")
+		print("Recompensa média de "+ str(avg_reward)+" em "+str(self.eval_episodes)+" episódios")
+	
 		return avg_reward
 
 
