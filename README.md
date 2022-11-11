@@ -33,7 +33,11 @@ This project has the objective of train a <b>Twin delayed deep determinisctic po
 </br>
 </br>
 
-![tcc](https://user-images.githubusercontent.com/46981727/201250909-cfdc0f95-f9f8-4ae7-bedc-81e5d1be91a4.gif)
+
+
+https://user-images.githubusercontent.com/46981727/201251045-07afc348-ea96-4923-bf70-c473780f002a.mp4
+
+
 
 
 </br>
